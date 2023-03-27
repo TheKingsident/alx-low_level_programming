@@ -16,7 +16,7 @@ int main(void)
 	for (i = 0; oalpha[i] != '\0'; i++)
 {	putchar(oalpha[i]); }
 
-	putchar('\0');
+	putchar('\n');
 
 	return (0);
 }
