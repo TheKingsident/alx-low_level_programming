@@ -6,14 +6,11 @@
  * Return: Always 0 (Success)
  */
 int main(void)
-{	int numbers =  0123456789;
-	int digit;
+{	int numbers;
 
-	while (numbers > 0)
-{	digit = numbers % 10;
-	numbers /= 10;
-	putchar(digit = '0');
-}
+	for (numbers = 0; numbers < 10; numbers++)
+{	putchar(numbers + '0'); }
+
 	putchar('\0');
 
 	return (0);
