@@ -12,7 +12,7 @@ int main(void)
 	for (i = 0; tebahpla[i] != '\0'; i++)
 {	putchar(tebahpla[i]); }
 
-	putchar('\n')
+	putchar('\n');
 
 	return (0);
 }
