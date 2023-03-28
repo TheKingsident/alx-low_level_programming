@@ -12,8 +12,8 @@ int main(void)
 
 	for (i = 0; i < 100; i++)
 {	putchar(i + '\0');
-	for (j = 0; commaspace[j] != '\0'; j++)
-	{	putchar(commaspace[j]); } }
+	putchar(",");
+	putchar(" "); }
 
 	putchar('\n');
 	return (0);
