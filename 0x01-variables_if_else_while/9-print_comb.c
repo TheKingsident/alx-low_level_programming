@@ -7,8 +7,6 @@
  */
 int main(void)
 {	int i;
-	int j;
-	char commaspace[] = ", ";
 
 	for (i = 0; i < 100; i++)
 {	putchar(i + '\0');
