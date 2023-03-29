@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-void printToConsole(const char* something)
+void print_alphabet(void)
 {	int i;
 
 	for (i = 0; something[i] != '\0'; i++)
