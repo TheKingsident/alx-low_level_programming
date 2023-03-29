@@ -6,4 +6,6 @@ void printToConsole(const char* something)
 
 	for (i = 0; something[i] != '\0'; i++)
 {	putchar(something[i]); }
+
+	putchar('\n');
 }
