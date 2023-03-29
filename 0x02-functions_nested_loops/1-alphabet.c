@@ -6,7 +6,7 @@
  * Return: Always 0 (Success)
  */
 int main(void)
-{	print_alphabet("abcdefghijklmnopqrstuvwxyz");
+{	print_alphabe();
 
 	return (0);
 }
