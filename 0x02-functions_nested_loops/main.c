@@ -1,12 +1,12 @@
-#include <stdio.h>
 #include "main.h"
 
-void print_alphabet(void)
-{	int i;
-	char something[] = "abcdefghijklmnopqrstuvwxyz";
+/**
+ * main - check the code.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{	print_alphabet_x10();
 
-	for (i = 0; something[i] != '\0'; i++)
-{	putchar(something[i]); }
-
-	putchar('\n');
+	return (0);
 }
