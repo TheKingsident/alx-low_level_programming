@@ -16,8 +16,6 @@ void print_alphabet_x10(void)
 	for (i = 0; smallalphabet != '\0'; i++)
 	{	putchar(smallalphabet[i]); }
 
-	putchar('\n');
-
 	j++; }
 
 }
