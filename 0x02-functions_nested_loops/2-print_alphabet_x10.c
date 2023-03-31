@@ -8,16 +8,16 @@
  */
 void print_alphabet_x10(void)
 {	int i;
-	int j = 10;
+	int j = 0;
 	char smallalphabet[] = "abcdefghijklmnopqrstuvwxyz";
 
-	while (j != 0)
+	while (j < 10)
 {
 	for (i = 0; smallalphabet != '\0'; i++)
 	{	putchar(smallalphabet[i]); }
 
 	putchar('\n');
 
-	j--; }
+	j++; }
 
 }
