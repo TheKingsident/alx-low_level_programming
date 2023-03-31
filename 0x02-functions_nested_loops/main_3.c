@@ -1,4 +1,4 @@
-#include "3-main.h"
+#include "main_3.h"
 
 /**
  * main - Entry point

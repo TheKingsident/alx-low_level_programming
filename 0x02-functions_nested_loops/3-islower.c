@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "3-main.h"
+#include "main_3.h"
 
 /**
  * _islower - checks if a character is lowercase
