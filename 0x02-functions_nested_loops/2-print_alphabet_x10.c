@@ -13,8 +13,10 @@ void print_alphabet_x10(void)
 
 	while (j < 10)
 {
-	for (i = 0; smallalphabet != '\0'; i++)
+	for (i = 0; smallalphabet[i] != '\0'; i++)
 	{	putchar(smallalphabet[i]); }
+
+	putchar('\0');
 
 	j++; }
 
