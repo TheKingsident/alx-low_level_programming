@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -14,9 +13,9 @@ void print_alphabet_x10(void)
 	while (j < 10)
 {
 	for (i = 0; smallalphabet[i] != '\0'; i++)
-	{	putchar(smallalphabet[i]); }
+	{	_putchar(smallalphabet[i]); }
 
-	putchar('\n');
+	_putchar('\n');
 
 	j++; }
 
