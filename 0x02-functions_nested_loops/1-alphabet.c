@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 
 
@@ -12,7 +11,9 @@ void print_alphabet(void)
 	char something[] = "abcdefghijklmnopqrstuvwxyz";
 
 	for (i = 0; something[i] != '\0'; i++)
-{	putchar(something[i]); }
+{	_putchar(something[i]); }
 
-	putchar('\n');
+	_putchar('\n');
+
+
 }
