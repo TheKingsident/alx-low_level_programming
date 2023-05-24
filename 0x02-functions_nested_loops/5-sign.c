@@ -19,9 +19,7 @@ int print_sign(int n)
 	{
 		_putchar('0');
 		return (0); } /* n is zero */
-	else
-	{
-		_putchar('-');
-		return (-1);  /* n is less than zero*/
-	}
+	_putchar('-');
+	return (-1);  /* n is less than zero*/
+}
 }
