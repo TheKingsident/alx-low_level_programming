@@ -9,16 +9,21 @@
 void more_numbers(void)
 {	int i = 0;
 	int j;
-	char more_numbers[] = "01234567891011121314";
+	int k;
+	char some_numbers[] = "0123456789";
+	char more_numbers[] = "1011121314";
 
 	while (i < 11)
 
 	{	i++;
-		for (j = 0; more_numbers[j] != '\0'; j++)
+		for (j = 0; some_numbers[j] != '\0'; j++)
 		{
-			_putchar(more_numbers[j]); }
+			_putchar(some_numbers[j]); }
+		for (k = 0; more_numbers[k] != '\0'; k++)
+		{
+			_putchar(more_numbers[k]); }
+
 		_putchar('\n'); }
 
-	
 
 }
