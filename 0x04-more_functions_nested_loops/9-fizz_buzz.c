@@ -1,6 +1,12 @@
 #include <stdio.h>
 
-int main()
+/**
+ * main - main function
+ *
+ * Return: Always 0 (Success)
+ */
+
+int main(void)
 {
 	int i;
 
@@ -22,8 +28,9 @@ int main()
 		{
 			printf("%d ", i); }
 	}
+	printf("\n");
 
-	return 0;
+	return (0);
 
 }
 
