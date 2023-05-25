@@ -13,7 +13,7 @@ void more_numbers(void)
 	char some_numbers[] = "0123456789";
 	char more_numbers[] = "1011121314";
 
-	while (i < 11)
+	while (i < 10)
 
 	{	i++;
 		for (j = 0; some_numbers[j] != '\0'; j++)
