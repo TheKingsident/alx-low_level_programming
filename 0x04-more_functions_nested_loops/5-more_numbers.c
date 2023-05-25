@@ -19,6 +19,6 @@ void more_numbers(void)
 			_putchar(more_numbers[j]); }
 		_putchar('\n'); }
 
-	_putchar('\n');
+	
 
 }
