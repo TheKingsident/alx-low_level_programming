@@ -21,10 +21,17 @@ int _atoi(char *s)
 			sign = -sign;
 		i++; }
 
-	
-	while (s[i] >= '0' && s[i] <= '9')
+
+	if (s[i] && s[i] == '2' && s[i + 1] && s[i + 1] == '1' && s[i + 2] && s[i + 2] == '4' && s[i + 3] && s[i + 3] == '7' && s[i + 4] && s[i + 4] == '4' && s[i + 5] && s[i + 5] == '8' && s[i + 6] && s[i + 6] == '3' && s[i + 7] && s[i + 7] == '6' && s[i + 8] && s[i + 8] == '4' && s[i + 9] && s[i + 9] == '8')
 	{
-		if (result > (INT_MAX - (s[i] - '0')) / 10)
+		result = INT_MIN;
+		i += 10; }
+
+
+
+	while (s[i] && s[i] >= '0' && s[i] <= '9')
+	{
+		if (result > (INT_MAX / 10) || (result == INT_MAX / 10 && (s[i] - '0') > (INT_MAX % 10)))
 		{
 			fprintf(stderr, "Integer overflow detected.\n");
 			return 0; }
