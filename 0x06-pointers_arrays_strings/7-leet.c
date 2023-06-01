@@ -9,33 +9,23 @@
 char *leet(char *str)
 {
 	int i;
+	int j;
+	char *letters;
+	char *leet_numbs;
 
+	letters = "aAeEoOtTlL";
+	leet_numbs = "4433007711";
 	i = 0;
 
-	while (str[i] != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == 'a' || str[i] == 'A')
+		for (j = 0; letters[j] != '\0'; j++)
 		{
-			str[i] = '4'; }
-
-		else if (str[i] == 'e' || str[i] == 'E')
-		{
-			str[i] = '3'; }
-
-		else if (str[i] == 'o' || str[i] == 'O')
-		{
-			str[i] = '0'; }
-
-		else if (str[i] == 't' || str[i] == 'T')
-		{
-			str[i] = '7'; }
-
-		else if (str[i] == 'l' || str[i] == 'L')
-		{
-			str[i] = '1'; }
-
-		i++;
-
+			if (str[i] == letters[j])
+			{
+				str[i] = leet_numbs[j];
+				break; }
+		}
 	}
 
 	return (str);
