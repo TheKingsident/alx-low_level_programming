@@ -15,29 +15,21 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i = 0;
-	int k;
-	int l;
-	int destLength = 0;
-	char *result;
+    int destLength = 0;
+    int i = 0;
 
-	while (dest[i] != '\0')
-	{
-		destLength++;
-		i++; }
+    while (dest[destLength] != '\0')
+    {
+        destLength++;
+    }
 
-	result = (char *)malloc((destLength + n + 1) * sizeof(char));
+    while (src[i] != '\0' && i < n)
+    {
+        dest[destLength + i] = src[i];
+        i++;
+    }
 
-	for (i = 0; i < destLength; i++)
-	{
-		result[i] = dest[i]; }
+    dest[destLength + i] = '\0';
 
-	for (k = destLength, l = 0; l < n && src[l] != '\0'; k++, l++)
-	{
-		result[k] = src[l]; }
-
-	result[k] = '\0';
-
-
-	return (result);
+    return (dest);
 }
