@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * _strncat - Concatenates the string in src with the string in 
  *
@@ -18,18 +19,25 @@ char *_strncat(char *dest, char *src, int n)
 	int k;
 	int l;
 	int destLength = 0;
+	char *result;
 
 	while (dest[i] != '\0')
 	{
 		destLength++;
 		i++; }
 
-	for (k = destLength, l = 0; (k < (destLength + n)); k++, l++)
+	result = (char *)malloc((destLength + n + 1) * sizeof(char));
+
+	for (i = 0; i < destLength; i++)
 	{
-		dest[k] = src[l]; }
+		result[i] = dest[i]; }
 
-	dest[destLength + n] = '\0';
+	for (k = destLength, l = 0; l < n && src[l] != '\0'; k++, l++)
+	{
+		result[k] = src[l]; }
+
+	result[k] = '\0';
 
 
-	return (dest);
+	return (result);
 }
