@@ -25,13 +25,13 @@ char *_strstr(char *haystack, char *needle)
 	{
 		if (haystack[i] == needle[0])
 		{
-			for (j = 1; j < needleLength; j++)
+			for (j = 1; j <= needleLength; j++)
 			{
 				if (haystack[i + j] != needle[j])
 
 					break; }
 
-			if (j == needleLength)
+			if (j > needleLength)
 
 				return (&haystack[i]); }
 	}
