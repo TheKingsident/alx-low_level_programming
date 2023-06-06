@@ -11,7 +11,6 @@
 void print_diagsums(int *a, int size)
 {
 	int i;
-	int j;
 	int firstDiagonal;
 	int secondDiagonal;
 
@@ -20,11 +19,12 @@ void print_diagsums(int *a, int size)
 
 	for (i = 0; i < size; i++)
 	{
-		firstDiagonal += *((int *)a + i * size + 1); }
+		firstDiagonal += a[i * size + i]; }
 
-	for (j = 0; j < size; j++)
+	for (i = 0; i < size; i++)
 	{
-		secondDiagonal += *((int *)a + (size - 1 - j) * size + j); }
+		secondDiagonal += a[i * size + (size - 1 - i)]; }
+
 
 	printf("%d, %d\n", firstDiagonal, secondDiagonal);
 
