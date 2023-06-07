@@ -1,16 +1,13 @@
 #include "main.h"
 /**
- * is_prime_number - The function Makes the return
+ * is_prime_recursive - The function Makes the return
  *
  * @n: The number
- *
- * is_prime_recursive - The function Makes the return
  *
  * @divisor: Divisor
  *
  * Return: Prime or not
  */
-
 int is_prime_recursive(int n, int divisor)
 {
 	if (n <= 1)
@@ -28,6 +25,13 @@ int is_prime_recursive(int n, int divisor)
 	return (is_prime_recursive(n, divisor + 1));
 }
 
+/**
+ * is_prime_number - The function Makes the return
+ *
+ * @n: The number
+ *
+ * Return: Prime or not
+ */
 int is_prime_number(int n)
 {
 	return (is_prime_recursive(n, 2));
