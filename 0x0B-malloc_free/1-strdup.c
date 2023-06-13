@@ -19,20 +19,24 @@ char *_strdup(char *str)
 
 	lenStr = 0;
 
-	while (str[lenStr] != '\0')
+	if (str != NULL)
 	{
-		lenStr++; }
+		while (str[lenStr] != '\0')
+		{
+			lenStr++; }
 
-	allocStr = malloc(sizeof(char) * (lenStr + 1));
+		allocStr = malloc(sizeof(char) * (lenStr + 1));
 
-	if (allocStr == NULL)
-	{
-		fprintf(stderr, "Not enough memory left!\n");
-		return (NULL); }
+		if (allocStr == NULL)
+		{
+			fprintf(stderr, "Not enough memory left!\n");
+			return (NULL); }
 
-	for (i = 0; i <= lenStr; i++)
-	{
-		allocStr[i] = str[i]; }
+		for (i = 0; i <= lenStr; i++)
+		{
+			allocStr[i] = str[i]; }
 
-	return (allocStr);
+		return (allocStr); }
+
+	return (NULL);
 }
