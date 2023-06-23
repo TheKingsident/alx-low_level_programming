@@ -36,9 +36,12 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	else
 	{
-		int num = va_arg(numbers, int);
+		for (i = 0; i < n; i++)
+		{
+			int num = va_arg(numbers, int);
 
-		printf("%d", num);
+			printf("%d", num); }
+
 		printf("\n"); }
 
 	va_end(numbers);
