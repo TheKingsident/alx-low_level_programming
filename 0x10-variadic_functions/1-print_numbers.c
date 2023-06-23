@@ -28,6 +28,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			{
 				printf(" "); }
 		}
+		printf("\n");
 	}
 	else if (n > 0)
 	{
