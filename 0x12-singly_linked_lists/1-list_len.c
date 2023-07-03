@@ -16,7 +16,8 @@ size_t list_len(const list_t *h)
 	while (currentList != NULL)
 	{
 		elementCount++;
-       		currentList = currentList->next;	}
+		currentList = currentList->next;
+	}
 
 	return (elementCount);
 }
