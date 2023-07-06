@@ -1,5 +1,10 @@
 #include "lists.h"
 
+/**
+ * print_listint_safe - Prints the content of a list
+ * @head: The pointer to the head node
+ * Return: The node count
+ */
 size_t print_listint_safe(const listint_t *head)
 {
 
@@ -17,8 +22,8 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		if (loop && checkingNode == currentNode)
 		{
-			 printf("-> [%p] %d\n", (void *)currentNode, currentNode->n);
-			 return (nodeCount); }
+			printf("-> [%p] %d\n", (void *)currentNode, currentNode->n);
+			return (nodeCount); }
 
 		printf("[%p] %d\n", (void *)currentNode, currentNode->n);
 		nodeCount++;
@@ -27,7 +32,7 @@ size_t print_listint_safe(const listint_t *head)
 		{
 			checkingNode = checkingNode->next->next;
 			currentNode = currentNode->next;
-	       		loop = 1; }
+			loop = 1; }
 		else
 		{
 			currentNode = currentNode->next;
