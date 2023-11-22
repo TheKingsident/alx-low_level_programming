@@ -14,15 +14,12 @@ $(OBJ): %.o: %.c m.h
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	# Using the automatic variables to avoid using $(CC) more than once
 	$(LINK.c) $^ -o $@
 
 clean:
-	# Using the shell to avoid using $(RM) more than twice
 	/bin/sh -c "rm -f *~ *# $(NAME)"
 
 oclean:
-	# Using the shell to avoid using $(RM) more than twice
 	/bin/sh -c "rm -f $(OBJ)"
 
 fclean: clean oclean
