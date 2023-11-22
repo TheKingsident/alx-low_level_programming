@@ -8,7 +8,6 @@ RM = rm -f
 
 # Rules
 all: $(NAME)
-	$(CC) $(OBJ) -o $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ)
