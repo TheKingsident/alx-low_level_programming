@@ -1,3 +1,5 @@
+# Simple Makefile for building 'school' executable
+
 NAME = school
 CC = gcc
 SRC = $(wildcard *.c)
