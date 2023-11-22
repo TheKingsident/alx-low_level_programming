@@ -1,0 +1,1 @@
+This directory contains assignment files for the "0x1C. C - Makefiles" task from ALX
