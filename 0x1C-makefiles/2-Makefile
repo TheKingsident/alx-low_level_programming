@@ -2,7 +2,7 @@
 
 CC = gcc
 
-SRC = main.c school.c
+SRC = $(wildcard *.c)
 
 OBJ = $(SRC:.c=.o)
 
@@ -11,7 +11,7 @@ NAME = school
 all: $(NAME)
 
 school: $(OBJ)
-	$(CC) -o school $(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) -c $< -o $@
@@ -21,4 +21,4 @@ main.o: main.c m.h
 school.o: school.c
 
 clean:
-	rm -f *.o school
+	rm -f *.o $(NAME)
