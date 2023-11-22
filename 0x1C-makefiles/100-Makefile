@@ -1,0 +1,32 @@
+# Simple Makefile for building 'school' executable
+
+NAME = school
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+$(OBJ): %.o: %.c m.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	# Using the automatic variables to avoid using $(CC) more than once
+	$(LINK.c) $^ -o $@
+
+clean:
+	# Using the shell to avoid using $(RM) more than twice
+	/bin/sh -c "rm -f *~ *# $(NAME)"
+
+oclean:
+	# Using the shell to avoid using $(RM) more than twice
+	/bin/sh -c "rm -f $(OBJ)"
+
+fclean: clean oclean
+
+re: fclean all
+
+.PHONY: all clean fclean oclean re
