@@ -5,14 +5,6 @@ SRC = $(wildcard *.c)
 OBJ = $(patsubst %.c,%.o,$(SRC))
 NAME = school
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
-%.o: %.c
-	$(CC)  -c -o $@ $<
-
-clean:
-	rm -f $(OBJ) $(NAME)
 
