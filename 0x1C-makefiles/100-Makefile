@@ -1,29 +1,36 @@
 # Simple Makefile for building 'school' executable
 
+# Makefile for building 'school' executable with strict constraints
+
+# Variables
 NAME = school
-CC = gcc
 SRC = main.c school.c
-OBJ = $(SRC:.c=.o)
-RM = rm -f
+DEPS = m.h
+CC = gcc
 CFLAGS = -Wall -Werror -Wextra -pedantic
+LDLIBS = 
+LOADLIBES = 
 
-$(OBJ): %.o: %.c m.h
-	$(CC) $(CFLAGS) -c $< -o $@
-
-
+# Main rule for the executable
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(LINK.c) $^ -o $@
+# Linking the executable without an $(OBJ) rule or %.o: %.c pattern
+$(NAME): $(SRC) $(DEPS)
+	$(CC) $(CFLAGS) -o $@ $(filter %.c, $^)
 
+# Cleaning up Emacs and Vim temporary files and the executable
 clean:
-	/bin/sh -c "rm -f *~ *# $(NAME)"
+	/bin/rm -f *~ *# $(NAME)
 
+# Removing object files
 oclean:
-	/bin/sh -c "rm -f $(OBJ)"
+	/bin/rm -f $(SRC:.c=.o)
 
+# Full clean (temporary files, executable, and object files)
 fclean: clean oclean
 
+# Forcing recompilation
 re: fclean all
 
+# Phony targets to ensure correct behavior regardless of file names
 .PHONY: all clean fclean oclean re
