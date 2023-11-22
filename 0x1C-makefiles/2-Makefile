@@ -1,33 +1,16 @@
-# Simple Makefile for building 'school' executable
-
-CC = gcc
-
-SRC = $(wildcard *.c)
-
-OBJ = $(SRC:.c=.o)
-
 NAME = school
+CC = gcc
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-school: $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) -c $< -o $@
 
--include $(OBJ:.o=.d)
-
-# Rule to generate dependency files
-%.d: %.c
-	@$(CC) -MM $< > $@
-	@mv -f $@ $@.tmp
-	@sed -e 's|.*:|$*.o:|' < $@.tmp > $@
-	@sed -e 's/.*://' -e 's/\\$$//' < $@.tmp | fmt -1 | \
-	  sed -e 's/^ *//' -e 's/$$/:/' >> $@
-	@rm -f $@.tmp
-
-# Rule to clean the build files
 clean:
-	rm -f *.o $(NAME) *.d
-	
+	rm -f $(OBJ)
+
