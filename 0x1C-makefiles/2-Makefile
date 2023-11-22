@@ -2,7 +2,7 @@
 
 CC = gcc
 SRC = $(wildcard *.c)
-OBJ = $(SRC:.c=.o)
+OBJ = $(patsubst %.c,%.o,$(SRC))
 NAME = school
 
 all: $(NAME)
