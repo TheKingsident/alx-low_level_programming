@@ -1,0 +1,28 @@
+CC = gcc
+RM = rm -f
+NAME = school
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+
+# Define the rules
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) -o $(NAME) $(OBJ)
+
+%.o: %.c
+	$(CC) -c $< -o $@
+
+clean:
+	$(RM) *~ *# #*#
+	$(RM) $(NAME)
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all
+
+# Mark rules as phony
+.PHONY: all clean oclean fclean re
