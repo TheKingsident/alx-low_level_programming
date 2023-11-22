@@ -1,10 +1,13 @@
-CC = gcc
-RM = rm -f
+# Makefile
+
+# Variables
 NAME = school
+CC = gcc
 SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
+RM = rm -f
 
-# Define the rules
+# Rules
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -14,8 +17,7 @@ $(NAME): $(OBJ)
 	$(CC) -c $< -o $@
 
 clean:
-	$(RM) *~ *# #*#
-	$(RM) $(NAME)
+	$(RM) *~ *# $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
@@ -24,5 +26,5 @@ fclean: clean oclean
 
 re: fclean all
 
-# Mark rules as phony
+# Phony targets
 .PHONY: all clean oclean fclean re
