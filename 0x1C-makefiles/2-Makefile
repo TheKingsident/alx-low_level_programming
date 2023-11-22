@@ -16,9 +16,18 @@ school: $(OBJ)
 %.o: %.c
 	$(CC) -c $< -o $@
 
-main.o: main.c m.h
+-include $(OBJ:.o=.d)
 
-school.o: school.c
+# Rule to generate dependency files
+%.d: %.c
+	@$(CC) -MM $< > $@
+	@mv -f $@ $@.tmp
+	@sed -e 's|.*:|$*.o:|' < $@.tmp > $@
+	@sed -e 's/.*://' -e 's/\\$$//' < $@.tmp | fmt -1 | \
+	  sed -e 's/^ *//' -e 's/$$/:/' >> $@
+	@rm -f $@.tmp
 
+# Rule to clean the build files
 clean:
-	rm -f *.o $(NAME)
+	rm -f *.o $(NAME) *.d
+	
