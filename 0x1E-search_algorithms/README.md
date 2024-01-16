@@ -1,0 +1,1 @@
+This directory contains assignment files for the "0x1E. C - Search Algorithms" task from ALX
